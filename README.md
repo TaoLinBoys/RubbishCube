@@ -7,7 +7,7 @@ RubbishlyHandCraftedColorCube - a 3D representation of a Rubicks Cube using proc
 
 
 mm/dd name
-desc
+\ndesc
 ________________________________________________________________________________
 
 # Planning
