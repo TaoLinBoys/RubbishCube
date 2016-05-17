@@ -1,3 +1,5 @@
+int sizeOfBox = 200;
+
 void setup(){
   size(800,600,P3D);
   background(0);
@@ -8,11 +10,11 @@ void setup(){
   rotateX(PI/4);  
   
   
-  box(200);
+  box(sizeOfBox);
 }
 
-float rotx = PI/4;
-float roty = PI/4;
+float rotx = 0;
+float roty = 0;
 
 void draw(){
   lights();
@@ -24,7 +26,10 @@ void draw(){
   noStroke();
   rotateX(rotx);
   rotateY(roty);
-  //setRotations();
+  
+  rectMode(CENTER);
+  rect(200,200,100,100);
+  
   box(200);
 
 }
