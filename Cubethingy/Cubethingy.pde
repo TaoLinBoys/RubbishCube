@@ -21,18 +21,17 @@ void draw(){
   background(0);
   setPerspective();
   
-  translate(400,300,0);
-  fill(204);
-  noStroke();
+  pushMatrix();
   rotateX(rotx);
   rotateY(roty);
+  fill(200,0,0);
+  translate(width/2,height/2,-100);
+  box(200,200,.000000000000001);
   
-  rectMode(CENTER);
-  rect(200,200,100,100);
-  
-  box(200);
+  popMatrix();
 
 }
+
 
 void mouseDragged(){
   float rate = 0.01;
