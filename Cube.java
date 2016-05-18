@@ -79,15 +79,138 @@ public class Cube{
 	}
     }
 
-    public void rotateB(){
+    public void rotateB(boolean CW){
+	transpose(5);
+	
+	if (CW){
+	    flipRows(5);
+	    
+	    for (int i = 0; i < 3; i++){
+		int temp = cube[2][i][0];
+		cube[2][i][0] = cube[4][0][i];
+		cube[4][0][i] = cube[1][i][2];
+		cube[1][i][2] = cube[3][2][i];
+		cube[3][2][i] = temp;
+	    }
+	}else{
+	    flipCols(5);
+	    
+	    for (int i = 0; i < 3; i++){
+
+		int temp = cube[2][i][0];
+		cube[2][i][0] = cube[3][2][i];
+		cube[3][2][i] = cube[1][i][2];
+		cube[1][i][2] = cube[4][0][i];
+		cube[4][0][i] = temp;
+	    }
+	}
     }
+
+
     public void rotateL(){
+	transpose(2);
+	
+	if (CW){
+	    flipRows(2);
+	    
+	    for (int i = 0; i < 3; i++){
+		int temp = cube[0][i][0];
+		cube[0][i][0] = cube[4][i][0];
+		cube[4][i][0] = cube[5][i][2];
+		cube[5][i][2] = cube[3][i][0];
+		cube[3][i][0] = temp;
+	    }
+	}else{
+	    flipCols(2);
+	    
+	    for (int i = 0; i < 3; i++){
+
+		int temp = cube[0][i][0];
+		cube[0][i][0] = cube[3][i][0];
+		cube[3][i][0] = cube[5][i][2];
+		cube[5][i][2] = cube[4][i][0];
+		cube[4][i][0] = temp;
+	    }
+	}
     }
+
     public void rotateR(){
+	transpose(1);
+	
+	if (CW){
+	    flipRows(1);
+	    
+	    for (int i = 0; i < 3; i++){
+		int temp = cube[5][i][0];
+		cube[5][i][0] = cube[4][i][2];
+		cube[4][i][2] = cube[0][i][2];
+		cube[0][i][2] = cube[3][i][2];
+		cube[3][i][2] = temp;
+	    }
+	}else{
+	    flipCols(1);
+	    
+	    for (int i = 0; i < 3; i++){
+
+		int temp = cube[2][i][0];
+		cube[2][i][0] = cube[3][2][i];
+		cube[3][2][i] = cube[1][i][2];
+		cube[1][i][2] = cube[4][0][i];
+		cube[4][0][i] = temp;
+	    }
+	}
     }
     public void rotateT(){
+	transpose(4);
+	
+	if (CW){
+	    flipRows(4);
+	    
+	    for (int i = 0; i < 3; i++){
+		int temp = cube[2][i][0];
+		cube[2][i][0] = cube[4][0][i];
+		cube[4][0][i] = cube[1][i][2];
+		cube[1][i][2] = cube[3][2][i];
+		cube[3][2][i] = temp;
+	    }
+	}else{
+	    flipCols(4);
+	    
+	    for (int i = 0; i < 3; i++){
+
+		int temp = cube[2][i][0];
+		cube[2][i][0] = cube[3][2][i];
+		cube[3][2][i] = cube[1][i][2];
+		cube[1][i][2] = cube[4][0][i];
+		cube[4][0][i] = temp;
+	    }
+	}
     }
     public void rotateD(){
+	transpose(3);
+	
+	if (CW){
+	    flipRows(3);
+	    
+	    for (int i = 0; i < 3; i++){
+		int temp = cube[2][i][0];
+		cube[2][i][0] = cube[4][0][i];
+		cube[4][0][i] = cube[1][i][2];
+		cube[1][i][2] = cube[3][2][i];
+		cube[3][2][i] = temp;
+	    }
+	}else{
+	    flipCols(3);
+	    
+	    for (int i = 0; i < 3; i++){
+
+		int temp = cube[2][i][0];
+		cube[2][i][0] = cube[3][2][i];
+		cube[3][2][i] = cube[1][i][2];
+		cube[1][i][2] = cube[4][0][i];
+		cube[4][0][i] = temp;
+	    }
+	}
     }
 
     public String toString(){
@@ -106,10 +229,7 @@ public class Cube{
 
     public static void main(String[] args){
 	Cube x = new Cube();
-	x.rotateF(true);
-	x.rotateF(true);
-	x.rotateF(true);
-	x.rotateF(true);
+	x.rotateB(false);
 	System.out.println(x.toString());
     }
 
