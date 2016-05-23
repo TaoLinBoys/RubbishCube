@@ -1,7 +1,12 @@
 public class Cube{
     private int[][][] cube;
+    private FileWriter front;
 
     public Cube(){
+	File f = new File("front.txt");
+        f.createNewFile();
+	front = new FileWriter(f);
+
 	cube = new int[6][3][3];
 	//array of faces (3d array)
 	// [0,0,0] [1,1,1] [2,2,2] [3,3,3] [4,4,4] [5,5,5] 
@@ -12,16 +17,38 @@ public class Cube{
 	//     F     R        L      D       T       B
         //     0     1        2      3       4       5
 	
-	for (int i = 0; i<cube.length; i++){
-	    for (int j = 0; j < cube[1].length; j++){
-		for (int k = 0; k<cube[1][1].length;k++){
+	initializeCube();
+	
+
+    }
+
+    private void initializeCube(){
+	for (int i = 0; i<3; i++){
+	    for (int j = 0; j < 3; j++){
+		for (int k = 0; k< 3;k++){
 		    cube[i][j][k] = i;
 		}
 	    }
 	}
-	
-	
     }
+
+    private void save(){
+	for (int i = 0; i<3;i++){
+	    for (int j = 0; j<3;j++){
+		row = "";
+		for (int k = 0; k<3;k++){
+		    row += cube[i][j][k];
+		}
+		fileForFace(i).write(row + "\n");
+	    }
+	}
+	//fix this
+    }
+    
+    private File fileforFace(int i){
+	if (i == 0){
+	    return f
+		//fix tihs
 
     //flip array across main diagonal (as in transposing a matrix)
     private void transpose(int face){
@@ -35,7 +62,6 @@ public class Cube{
 	    }
 	}
     }
-
     private void flipRows(int face){
 	for (int r = 0; r<3; r++){
 	    int temp = cube[face][r][0];
