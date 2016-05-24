@@ -4,6 +4,8 @@ import java.util.*;
 float rotx = 0;
 float roty = 0;
 
+Cube Rubbish = new Cube();
+
 void setup(){
   size(800,700,P3D);
   background(0);
