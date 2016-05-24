@@ -21,6 +21,7 @@ void draw(){
   rotateY(roty);
   strokeWeight(5);
   
+  
   front(); // red center 
   back();  // green
   right(); // blue
