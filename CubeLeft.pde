@@ -1,43 +1,41 @@
-void right(){
-  translate(150,0,150);
-  
+void left(){
+  translate(-300,0,0);
+  //THIS STUFF IS DIFFERENT FROM THE OTHER FACES I SCREWED UP
   translate(0,-100,100);//topleft
-  fillIn(2);
+  fillIn(Rubbish.cube[2][0][2]);
   box(1,100,100);
   
   translate(0,0,-100);//topcenter
-  fillIn(2);
+  fillIn(Rubbish.cube[2][0][1]);
   box(1,100,100);
   
   translate(0,0,-100);//topright
-  fillIn(2);
+  fillIn(Rubbish.cube[2][0][0]);
   box(1,100,100);
   
   translate(0,100,200);//middleleft
-  fillIn(2);
+  fillIn(Rubbish.cube[2][1][2]);
   box(1,100,100);
   
   translate(0,0,-100);//middlecenter
-  fillIn(2);
+  fillIn(Rubbish.cube[2][1][1]);
   box(1,100,100);
   
   translate(0,0,-100);//middleright
-  fillIn(2);
+  fillIn(Rubbish.cube[2][1][0]);
   box(1,100,100);
   
   translate(0,100,200);//lowerleft
-  fillIn(2);
+  fillIn(Rubbish.cube[2][2][2]);
   box(1,100,100);
   
   translate(0,0,-100);//lowercenter
-  fillIn(2);
+  fillIn(Rubbish.cube[2][2][1]);
   box(1,100,100);
   
   translate(0,0,-100);//lowerright
-  fillIn(2);
+  fillIn(Rubbish.cube[2][2][0]);
   box(1,100,100);
   
   translate(0,-100,100);//reset
-  
-  
 }
