@@ -1,9 +1,11 @@
+import java.io.*;
 public class Cube{
     private int[][][] cube;
     private FileWriter front,right,left,down,top,back;
     public Cube(){
 	boolean savedCube;
-	
+
+	try{
 	File f = new File("front.txt");
 	if(f.createNewFile()){
 	    savedCube = true;
@@ -29,7 +31,10 @@ public class Cube{
 	File b = new File("back.txt");
         b.createNewFile();
 	back = new FileWriter(b);
-	
+
+	}catch (IOException e){
+	    savedCube = false;
+	}
 
 	
 	cube = new int[6][3][3];
@@ -62,6 +67,7 @@ public class Cube{
     }
 
     private void save(){
+	
 	for (int i = 0; i<1;i++){
 	    String face = "";
 	    for (int j = 0; j<3;j++){
@@ -70,7 +76,11 @@ public class Cube{
 		}
 	        face += "\n";
 	    }
-	    fileforFace(i).write(face);
+	    try{
+		fileforFace(i).write(face);
+	    }catch (IOException e){
+		break;
+	    }
 	}
     }
     
@@ -90,9 +100,8 @@ public class Cube{
 	if (i == 4){
 	    return top;
 	}
-	if (i == 5){
-	    return back;
-	}
+	return back;
+
     }
         
 
@@ -123,7 +132,9 @@ public class Cube{
 	}
     }
 
-    //for rotate algorithms, transpose array. then flip
+
+
+    //CW INDICATES CLOCKWISE!
     public void rotateF(boolean CW){
 	transpose(0);
 	
@@ -177,7 +188,7 @@ public class Cube{
     }
 
 
-    public void rotateL(){
+    public void rotateL(boolean CW){
 	transpose(2);
 	
 	if (CW){
@@ -206,7 +217,7 @@ public class Cube{
 
 
     //POTENTIAL PROBLEM with DOWN face
-    public void rotateR(){
+    public void rotateR(boolean CW){
 	transpose(1);
 	
 	if (CW){
@@ -232,7 +243,7 @@ public class Cube{
 	    }
 	}
     }
-    public void rotateT(){
+    public void rotateT(boolean CW){
 	transpose(4);
 	
 	if (CW){
@@ -258,7 +269,7 @@ public class Cube{
 	    }
 	}
     }
-    public void rotateD(){
+    public void rotateD(boolean CW){
 	transpose(3);
 	
 	if (CW){
@@ -289,12 +300,13 @@ public class Cube{
     private int inv(int i){
 	if (i == 0){
 	    return 2;
+	}
 	if (i == 1){
 	    return 1;
 	}
 	return 0;
     }
-    public String toString(){
+   public String toString(){
 	String ans = "";
 	for (int i = 0; i<cube.length; i++){
 	    for (int j = 0; j < cube[1].length; j++){
