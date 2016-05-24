@@ -1,12 +1,37 @@
 public class Cube{
     private int[][][] cube;
-    private FileWriter front;
-
+    private FileWriter front,right,left,down,top,back;
     public Cube(){
+	boolean savedCube;
+	
 	File f = new File("front.txt");
-        f.createNewFile();
-	front = new FileWriter(f);
+	if(f.createNewFile()){
+	    savedCube = true;
+	}
+        front = new FileWriter(f);
+	
+	File r = new File("right.txt");
+        r.createNewFile();
+        right = new FileWriter(f);
+	
+	File l = new File("left.txt");
+        l.createNewFile();
+	left = new FileWriter(l);
 
+	File d = new File("down.txt");
+	d.createNewFile();
+	down = new FileWriter(d);
+	
+	File t = new File("top.txt");
+        t.createNewFile();
+	top = new FileWriter(t);
+	
+	File b = new File("back.txt");
+        b.createNewFile();
+	back = new FileWriter(b);
+	
+
+	
 	cube = new int[6][3][3];
 	//array of faces (3d array)
 	// [0,0,0] [1,1,1] [2,2,2] [3,3,3] [4,4,4] [5,5,5] 
@@ -17,38 +42,59 @@ public class Cube{
 	//     F     R        L      D       T       B
         //     0     1        2      3       4       5
 	
-	initializeCube();
+	initializeCube(false); //fix later
 	
 
     }
 
-    private void initializeCube(){
-	for (int i = 0; i<3; i++){
-	    for (int j = 0; j < 3; j++){
-		for (int k = 0; k< 3;k++){
-		    cube[i][j][k] = i;
+    private void initializeCube(boolean savedCube){
+	if (savedCube){
+	    //nevermind
+	}else{
+	    for (int i = 0; i<6; i++){
+		for (int j = 0; j < 3; j++){
+		    for (int k = 0; k< 3;k++){
+			cube[i][j][k] = i;
+		    }
 		}
 	    }
 	}
     }
 
     private void save(){
-	for (int i = 0; i<3;i++){
+	for (int i = 0; i<1;i++){
+	    String face = "";
 	    for (int j = 0; j<3;j++){
-		row = "";
 		for (int k = 0; k<3;k++){
-		    row += cube[i][j][k];
+		    face += cube[i][j][k] + " ";
 		}
-		fileForFace(i).write(row + "\n");
+	        face += "\n";
 	    }
+	    fileforFace(i).write(face);
 	}
-	//fix this
     }
     
-    private File fileforFace(int i){
-	if (i == 0){
-	    return f
-		//fix tihs
+    private FileWriter fileforFace(int i){
+        if (i == 0){
+	    return front;
+	}
+	if (i == 1){
+	    return right;
+	}
+	if (i == 2){
+	    return left;
+	}
+	if (i == 3){
+	    return down;
+	}
+	if (i == 4){
+	    return top;
+	}
+	if (i == 5){
+	    return back;
+	}
+    }
+        
 
     //flip array across main diagonal (as in transposing a matrix)
     private void transpose(int face){
@@ -87,19 +133,18 @@ public class Cube{
 	    for (int i = 0; i < 3; i++){
 		int temp = cube[1][i][0];
 		cube[1][i][0] = cube[4][2][i];
-		cube[4][2][i] = cube[2][i][2];
+		cube[4][2][i] = cube[2][inv(i)][2];
 		cube[2][i][2] = cube[3][0][i];
-		cube[3][0][i] = temp;
+		cube[3][0][inv(i)] = temp;
 	    }
 	}else{
 	    flipCols(0);
 	    
 	    for (int i = 0; i < 3; i++){
-
 		int temp = cube[1][i][0];
-		cube[1][i][0] = cube[3][0][i];
+		cube[1][i][0] = cube[3][0][inv(i)];
 		cube[3][0][i] = cube[2][i][2];
-		cube[2][i][2] = cube[4][2][i];
+		cube[2][i][2] = cube[4][2][inv(i)];
 		cube[4][2][i] = temp;
 	    }
 	}
@@ -113,16 +158,15 @@ public class Cube{
 	    
 	    for (int i = 0; i < 3; i++){
 		int temp = cube[2][i][0];
-		cube[2][i][0] = cube[4][0][i];
+		cube[2][i][0] = cube[4][0][inv(i)];
 		cube[4][0][i] = cube[1][i][2];
-		cube[1][i][2] = cube[3][2][i];
+		cube[1][i][2] = cube[3][2][inv(i)];
 		cube[3][2][i] = temp;
 	    }
 	}else{
 	    flipCols(5);
 	    
 	    for (int i = 0; i < 3; i++){
-
 		int temp = cube[2][i][0];
 		cube[2][i][0] = cube[3][2][i];
 		cube[3][2][i] = cube[1][i][2];
@@ -160,6 +204,8 @@ public class Cube{
 	}
     }
 
+
+    //POTENTIAL PROBLEM with DOWN face
     public void rotateR(){
 	transpose(1);
 	
@@ -178,11 +224,11 @@ public class Cube{
 	    
 	    for (int i = 0; i < 3; i++){
 
-		int temp = cube[2][i][0];
-		cube[2][i][0] = cube[3][2][i];
-		cube[3][2][i] = cube[1][i][2];
-		cube[1][i][2] = cube[4][0][i];
-		cube[4][0][i] = temp;
+		int temp = cube[5][i][0];
+		cube[5][i][0] = cube[3][i][2];
+		cube[3][i][2] = cube[0][i][2];
+		cube[0][i][2] = cube[4][i][2];
+		cube[4][i][2] = temp;
 	    }
 	}
     }
@@ -239,6 +285,15 @@ public class Cube{
 	}
     }
 
+    //inverse for some edge case problems
+    private int inv(int i){
+	if (i == 0){
+	    return 2;
+	if (i == 1){
+	    return 1;
+	}
+	return 0;
+    }
     public String toString(){
 	String ans = "";
 	for (int i = 0; i<cube.length; i++){
