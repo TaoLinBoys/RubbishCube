@@ -37,5 +37,5 @@ void top(){
   fillIn(Rubbish.cube[4][2][2]);
   box(100,1,100);
   
-  
+  translate(-100,150,-100);//reset
 }
