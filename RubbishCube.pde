@@ -1,13 +1,13 @@
 //USE V3.0.2
 import java.util.*;
 
-float rotx = 0;
-float roty = 0;
+float rotx = -PI/6;
+float roty = -PI/4;
 boolean circleOver;
 Cube Rubbish = new Cube();
 
 void setup(){
-  size(800,700,P3D);
+  size(800,800,P3D);
   background(255,235,215);
 }
 
@@ -30,10 +30,11 @@ void draw(){
   top();   // orange
   popMatrix();
   
-  fill(255,213,253,255);
   strokeWeight(5);
-  rect(60,60,60,60);
-  rect(60,120,60,60);
+  fill(255,213,253,255);
+  rect(width/2-70,height-80,60,60);
+  fill(255,213,150,255);
+  rect(width/2+10,height-80,60,60);
   
 }
 
@@ -48,9 +49,9 @@ boolean overRect(int x, int y, int width, int height)  {
 }
 
 void mousePressed(){
-  if(overRect(60,60,60,60)){
+  if(overRect(width/2-70,height-80,60,60)){
     Rubbish.rotateF(false);
-  }else if(overRect(60,120,60,60)){
+  }else if(overRect(width/2+10,height-80,60,60)){
     Rubbish.rotateF(true);
   }
 }
