@@ -53,4 +53,8 @@ void mousePressed(){
   if(overRect(100,550,50,50)){
     Rubbish.rotateD(true);
   }
+  
+  if(overRect(300,50,50,50)){
+    Rubbish.scrambleCube();
+  }
 }

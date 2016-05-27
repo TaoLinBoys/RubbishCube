@@ -65,6 +65,10 @@ void draw(){
   rect(50,550,50,50);
   rect(100,550,50,50);
   
+  //SCRAMBLE
+  fill(175);
+  rect(300,50,50,50);
+  
   fill(0);
   text("CCW",40,30);
   text("CW",90,30);
@@ -75,16 +79,11 @@ void draw(){
   text("Top",50,340);
   text("Back",50,440);
   text("Down",50,540);
+  
+  text("scramble",300,30);
   popMatrix();
   
-  /*
-  fill(0);
-  text("rotx",100,100);
-  text(""+(PI/rotx)+"  *PI",135,100);
   
-  text("roty",100,125);
-  text(""+(PI/roty)+"  *PI",135,125);
-  */
 }
 
 
