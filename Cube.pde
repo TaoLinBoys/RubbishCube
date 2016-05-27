@@ -196,8 +196,8 @@ public class Cube {
         int temp = cube[0][i][0];
         cube[0][i][0] = cube[4][i][0];
         cube[4][i][0] = cube[5][inv(i)][2];
-        cube[5][inv(i)][2] = cube[3][0][0];
-        cube[3][0][0] = temp;
+        cube[5][inv(i)][2] = cube[3][i][0];
+        cube[3][i][0] = temp;
       }
     } else {
       flipCols(2);
@@ -205,8 +205,8 @@ public class Cube {
       for (int i = 0; i < 3; i++) {
 
         int temp = cube[0][i][0];
-        cube[0][i][0] = cube[3][0][0];
-        cube[3][0][0] = cube[5][inv(i)][2];
+        cube[0][i][0] = cube[3][i][0];
+        cube[3][i][0] = cube[5][inv(i)][2];
         cube[5][inv(i)][2] = cube[4][i][0];
         cube[4][i][0] = temp;
       }
