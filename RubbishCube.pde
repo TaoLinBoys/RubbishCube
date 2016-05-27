@@ -4,6 +4,7 @@ import java.util.*;
 float rotx = 0;
 float roty = 0;
 boolean circleOver;
+float frontZ, rightZ, leftZ, backZ, downZ, topZ;
 Cube Rubbish = new Cube();
 
 void setup(){
@@ -81,6 +82,13 @@ void draw(){
   text("Down",50,540);
   
   text("scramble",300,30);
+  
+  text("front z value  "+frontZ, 600,100);
+  text("right z value  "+rightZ, 600,130);
+  text("left z value  "+leftZ, 600,160);
+  text("back z value  "+backZ, 600,190);
+  text("top z value  "+topZ, 600,210);
+  text("down z value  "+downZ, 600,240);
   popMatrix();
   
   

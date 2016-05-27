@@ -20,6 +20,7 @@ void bottom(){
   translate(100,0,0);//middlecenter
   fillIn(Rubbish.cube[3][1][1]);
   box(100,1,100);
+  downZ = modelZ(100,1,100);
   
   translate(100,0,0);//middleright
   fillIn(Rubbish.cube[3][1][2]);
