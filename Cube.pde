@@ -1,41 +1,7 @@
 import java.io.*;
 public class Cube {
   int[][][] cube;
-  private FileWriter front, right, left, down, top, back;
   public Cube() {
-    boolean savedCube;
-
-    try {
-      File f = new File("front.txt");
-      if (f.createNewFile()) {
-        savedCube = true;
-      }
-      front = new FileWriter(f);
-
-      File r = new File("right.txt");
-      r.createNewFile();
-      right = new FileWriter(f);
-
-      File l = new File("left.txt");
-      l.createNewFile();
-      left = new FileWriter(l);
-
-      File d = new File("down.txt");
-      d.createNewFile();
-      down = new FileWriter(d);
-
-      File t = new File("top.txt");
-      t.createNewFile();
-      top = new FileWriter(t);
-
-      File b = new File("back.txt");
-      b.createNewFile();
-      back = new FileWriter(b);
-    }
-    catch (IOException e) {
-      savedCube = false;
-    }
-
 
     cube = new int[6][3][3];
     //array of faces (3d array)
@@ -47,13 +13,10 @@ public class Cube {
     //     F     R        L      D       T       B
     //     0     1        2      3       4       5
 
-    initializeCube(false); //fix later
+    initializeCube(); //fix later
   }
 
-  private void initializeCube(boolean savedCube) {
-    if (savedCube) {
-      //nevermind
-    } else {
+  private void initializeCube() {
       for (int i = 0; i<6; i++) {
         for (int j = 0; j < 3; j++) {
           for (int k = 0; k< 3; k++) {
@@ -61,46 +24,47 @@ public class Cube {
           }
         }
       }
+  }
+  
+  public void scrambleCube(){
+    for (int i = 0; i < 20; i++){
+      
+      int x = (int)(Math.random() * 12);
+      
+      if (x == 0){
+        rotateF(true);
+      }else if (x == 1){
+        rotateF(false);
+      }else if (x == 2){
+        rotateR(true);
+      }else if (x == 3){
+        rotateR(false);
+      }else if (x == 4){
+        rotateL(true);
+      }else if (x == 5){
+        rotateL(false);
+      }else if (x == 6){
+        rotateD(true);
+      }else if (x == 7){
+        rotateD(false);
+      }else if (x == 8){
+        rotateT(true);
+      }else if (x == 9){
+        rotateT(false);
+      }else if (x == 10){
+        rotateB(true);
+      }else if (x == 11){
+        rotateB(false);
+      }
+      
     }
   }
-
-  private void save() {
-
-    for (int i = 0; i<1; i++) {
-      String face = "";
-      for (int j = 0; j<3; j++) {
-        for (int k = 0; k<3; k++) {
-          face += cube[i][j][k] + " ";
-        }
-        face += "\n";
-      }
-      try {
-        fileforFace(i).write(face);
-      }
-      catch (IOException e) {
-        break;
-      }
-    }
+  
+  public void showSolution(){
+    
   }
+  
 
-  private FileWriter fileforFace(int i) {
-    if (i == 0) {
-      return front;
-    }
-    if (i == 1) {
-      return right;
-    }
-    if (i == 2) {
-      return left;
-    }
-    if (i == 3) {
-      return down;
-    }
-    if (i == 4) {
-      return top;
-    }
-    return back;
-  }
 
 
   //flip array across main diagonal (as in transposing a matrix)
