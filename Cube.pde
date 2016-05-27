@@ -1,6 +1,9 @@
 import java.io.*;
+import java.util.Stack;
 public class Cube {
   int[][][] cube;
+
+  Stack<String> solution;
   public Cube() {
 
     cube = new int[6][3][3];
@@ -14,56 +17,67 @@ public class Cube {
     //     0     1        2      3       4       5
 
     initializeCube(); //fix later
+    solution = new Stack<String>();
   }
 
   private void initializeCube() {
-      for (int i = 0; i<6; i++) {
-        for (int j = 0; j < 3; j++) {
-          for (int k = 0; k< 3; k++) {
-            cube[i][j][k] = i;
-          }
+    for (int i = 0; i<6; i++) {
+      for (int j = 0; j < 3; j++) {
+        for (int k = 0; k< 3; k++) {
+          cube[i][j][k] = i;
         }
       }
-  }
-  
-  public void scrambleCube(){
-    for (int i = 0; i < 20; i++){
-      
-      int x = (int)(Math.random() * 12);
-      
-      if (x == 0){
-        rotateF(true);
-      }else if (x == 1){
-        rotateF(false);
-      }else if (x == 2){
-        rotateR(true);
-      }else if (x == 3){
-        rotateR(false);
-      }else if (x == 4){
-        rotateL(true);
-      }else if (x == 5){
-        rotateL(false);
-      }else if (x == 6){
-        rotateD(true);
-      }else if (x == 7){
-        rotateD(false);
-      }else if (x == 8){
-        rotateT(true);
-      }else if (x == 9){
-        rotateT(false);
-      }else if (x == 10){
-        rotateB(true);
-      }else if (x == 11){
-        rotateB(false);
-      }
-      
     }
   }
-  
-  public void showSolution(){
-    
+
+  public void scrambleCube() {
+    for (int i = 0; i < 20; i++) {
+
+      int x = (int)(Math.random() * 12);
+
+      if (x == 0) {
+        rotateF(true);
+        solution.push("F\'");
+      } else if (x == 1) {
+        rotateF(false);
+        solution.push("F");
+      } else if (x == 2) {
+        rotateR(true);
+        solution.push("R\'");
+      } else if (x == 3) {
+        rotateR(false);
+        solution.push("R");
+      } else if (x == 4) {
+        rotateL(true);
+        solution.push("L\'");
+      } else if (x == 5) {
+        rotateL(false);
+        solution.push("L");
+      } else if (x == 6) {
+        rotateD(true);
+        solution.push("D\'");
+      } else if (x == 7) {
+        rotateD(false);
+        solution.push("D");
+      } else if (x == 8) {
+        rotateT(true);
+        solution.push("T\'");
+      } else if (x == 9) {
+        rotateT(false);
+        solution.push("T");
+      } else if (x == 10) {
+        rotateB(true);
+        solution.push("B\'");
+      } else if (x == 11) {
+        rotateB(false);
+        solution.push("B");
+      }
+    }
   }
-  
+
+  public void showSolution() {
+  }
+
 
 
 
@@ -266,7 +280,7 @@ public class Cube {
     }
     return 0;
   }
-  
+
   public String toString() {
     String ans = "";
     for (int i = 0; i<cube.length; i++) {
