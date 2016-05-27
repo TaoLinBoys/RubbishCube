@@ -2,7 +2,7 @@ void back(){
   translate(0,0,-300);
   
   translate(-100,-100,0);//topleft
-  fillIn(Rubbish.cube[5][0][0]);
+  fillIn(Rubbish.cube[5][0][2]);
   box(100,100,1);
   
   translate(100,0,0);//topcenter
@@ -10,11 +10,11 @@ void back(){
   box(100,100,1);
   
   translate(100,0,0);//topright
-  fillIn(Rubbish.cube[5][0][2]);
+  fillIn(Rubbish.cube[5][0][0]);
   box(100,100,1);
   
   translate(-200,100,0);//middleleft
-  fillIn(Rubbish.cube[5][1][0]);
+  fillIn(Rubbish.cube[5][1][2]);
   box(100,100,1);
   
   translate(100,0,0);//middlecenter
@@ -22,11 +22,11 @@ void back(){
   box(100,100,1);
   
   translate(100,0,0);//middleright
-  fillIn(Rubbish.cube[5][1][2]);
+  fillIn(Rubbish.cube[5][1][0]);
   box(100,100,1);
   
   translate(-200,100,0);//lowerleft
-  fillIn(Rubbish.cube[5][2][0]);
+  fillIn(Rubbish.cube[5][2][2]);
   box(100,100,1);
   
   translate(100,0,0);//lowercenter
@@ -34,7 +34,7 @@ void back(){
   box(100,100,1);
   
   translate(100,0,0);//lowerright
-  fillIn(Rubbish.cube[5][2][2]);
+  fillIn(Rubbish.cube[5][2][0]);
   box(100,100,1);
   
   translate(-100,-100,0); //reset

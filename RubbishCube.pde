@@ -59,9 +59,9 @@ boolean overRect(int x, int y, int width, int height)  {
 
 void mousePressed(){
   if(overRect(width/2-70,height-80,60,60)){
-    Rubbish.rotateF(false);
+    Rubbish.rotateB(false);
   }else if(overRect(width/2+10,height-80,60,60)){
-    Rubbish.rotateF(true);
+    Rubbish.rotateB(true);
   }
 }
 
