@@ -8,49 +8,49 @@ void mousePressed(){
   
   //front turns
   if(overRect(50,50,50,50)){
-    Rubbish.rotateF(true);
+    Rubbish.rotateF(false);
   }
   if(overRect(100,50,50,50)){
-    Rubbish.rotateF(false);
+    Rubbish.rotateF(true);
   }
   
   //right
   if(overRect(50,150,50,50)){
-    Rubbish.rotateR(true);
+    Rubbish.rotateR(false);
   }
   if(overRect(100,150,50,50)){
-    Rubbish.rotateR(false);
+    Rubbish.rotateR(true);
   }
   
   //left
   if(overRect(50,250,50,50)){
-    Rubbish.rotateL(true);
+    Rubbish.rotateL(false);
   }
   if(overRect(100,250,50,50)){
-    Rubbish.rotateL(false);
+    Rubbish.rotateL(true);
   }
   
   //top
   if(overRect(50,350,50,50)){
-    Rubbish.rotateT(true);
+    Rubbish.rotateT(false);
   }
   if(overRect(100,350,50,50)){
-    Rubbish.rotateT(false);
+    Rubbish.rotateT(true);
   }
   
   //back
   if(overRect(50,450,50,50)){
-    Rubbish.rotateB(true);
+    Rubbish.rotateB(false);
   }
   if(overRect(100,450,50,50)){
-    Rubbish.rotateB(false);
+    Rubbish.rotateB(true);
   }
   
   //down
   if(overRect(50,550,50,50)){
-    Rubbish.rotateD(true);
+    Rubbish.rotateD(false);
   }
   if(overRect(100,550,50,50)){
-    Rubbish.rotateD(false);
+    Rubbish.rotateD(true);
   }
 }
