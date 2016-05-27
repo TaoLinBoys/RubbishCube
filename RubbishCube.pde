@@ -7,7 +7,7 @@ boolean circleOver;
 Cube Rubbish = new Cube();
 
 void setup(){
-  size(800,800,P3D);
+  size(800,750,P3D);
   background(255,235,215);
 }
 
@@ -38,13 +38,53 @@ void draw(){
   rect(width/2+10,height-80,60,60);
   popMatrix();
   
+  pushMatrix();
+  
+  fill(135,206,250);
+  //front buttons
+  rect(50,50,50,50);
+  rect(100,50,50,50);
+  
+  //right buttons
+  rect(50,150,50,50);
+  rect(100,150,50,50);
+  
+  //left buttons
+  rect(50,250,50,50);
+  rect(100,250,50,50);
+  
+  //top
+  rect(50,350,50,50);
+  rect(100,350,50,50);
+  
+  //back
+  rect(50,450,50,50);
+  rect(100,450,50,50);
+  
+  //down
+  rect(50,550,50,50);
+  rect(100,550,50,50);
+  
+  fill(0);
+  text("CCW",40,30);
+  text("CW",90,30);
+  
+  text("Front",50,40);
+  text("Right",50,140);
+  text("Left",50,240);
+  text("Top",50,340);
+  text("Back",50,440);
+  text("Down",50,540);
+  popMatrix();
+  
+  /*
   fill(0);
   text("rotx",100,100);
   text(""+(PI/rotx)+"  *PI",135,100);
   
   text("roty",100,125);
   text(""+(PI/roty)+"  *PI",135,125);
-  
+  */
 }
 
 
@@ -54,14 +94,6 @@ boolean overRect(int x, int y, int width, int height)  {
     return true;
   } else {
     return false;
-  }
-}
-
-void mousePressed(){
-  if(overRect(width/2-70,height-80,60,60)){
-    Rubbish.rotateL(false);
-  }else if(overRect(width/2+10,height-80,60,60)){
-    Rubbish.rotateL(true);
   }
 }
 
