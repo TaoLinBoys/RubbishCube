@@ -195,9 +195,9 @@ public class Cube {
       for (int i = 0; i < 3; i++) {
         int temp = cube[0][i][0];
         cube[0][i][0] = cube[4][i][0];
-        cube[4][i][0] = cube[5][i][2];
-        cube[5][i][2] = cube[3][i][0];
-        cube[3][i][0] = temp;
+        cube[4][i][0] = cube[5][inv(i)][2];
+        cube[5][inv(i)][2] = cube[3][0][0];
+        cube[3][0][0] = temp;
       }
     } else {
       flipCols(2);
@@ -205,16 +205,15 @@ public class Cube {
       for (int i = 0; i < 3; i++) {
 
         int temp = cube[0][i][0];
-        cube[0][i][0] = cube[3][i][0];
-        cube[3][i][0] = cube[5][i][2];
-        cube[5][i][2] = cube[4][i][0];
+        cube[0][i][0] = cube[3][0][0];
+        cube[3][0][0] = cube[5][inv(i)][2];
+        cube[5][inv(i)][2] = cube[4][i][0];
         cube[4][i][0] = temp;
       }
     }
   }
 
 
-  //POTENTIAL PROBLEM with DOWN face
   public void rotateR(boolean CW) {
     transpose(1);
 
@@ -223,10 +222,10 @@ public class Cube {
 
       for (int i = 0; i < 3; i++) {
         int temp = cube[5][i][0];
-        cube[5][i][0] = cube[4][i][2];
-        cube[4][i][2] = cube[0][i][2];
-        cube[0][i][2] = cube[3][i][2];
-        cube[3][i][2] = temp;
+        cube[5][i][0] = cube[4][inv(i)][2];
+        cube[4][inv(i)][2] = cube[0][inv(i)][2];
+        cube[0][inv(i)][2] = cube[3][inv(i)][2];
+        cube[3][inv(i)][2] = temp;
       }
     } else {
       flipCols(1);
@@ -234,10 +233,10 @@ public class Cube {
       for (int i = 0; i < 3; i++) {
 
         int temp = cube[5][i][0];
-        cube[5][i][0] = cube[3][i][2];
-        cube[3][i][2] = cube[0][i][2];
-        cube[0][i][2] = cube[4][i][2];
-        cube[4][i][2] = temp;
+        cube[5][i][0] = cube[3][inv(i)][2];
+        cube[3][inv(i)][2] = cube[0][inv(i)][2];
+        cube[0][inv(i)][2] = cube[4][inv(i)][2];
+        cube[4][inv(i)][2] = temp;
       }
     }
   }
@@ -248,22 +247,22 @@ public class Cube {
       flipRows(4);
 
       for (int i = 0; i < 3; i++) {
-        int temp = cube[2][i][0];
-        cube[2][i][0] = cube[4][0][i];
-        cube[4][0][i] = cube[1][i][2];
-        cube[1][i][2] = cube[3][2][i];
-        cube[3][2][i] = temp;
+        int temp = cube[1][0][i];
+        cube[1][0][i] = cube[5][0][i];
+        cube[5][0][i] = cube[2][0][i];
+        cube[2][0][i] = cube[0][0][i];
+        cube[0][0][i] = temp;
       }
     } else {
       flipCols(4);
 
       for (int i = 0; i < 3; i++) {
 
-        int temp = cube[2][i][0];
-        cube[2][i][0] = cube[3][2][i];
-        cube[3][2][i] = cube[1][i][2];
-        cube[1][i][2] = cube[4][0][i];
-        cube[4][0][i] = temp;
+        int temp = cube[1][0][i];
+        cube[1][0][i] = cube[0][0][i];
+        cube[0][0][i] = cube[2][0][i];
+        cube[2][0][i] = cube[5][0][i];
+        cube[5][0][i] = temp;
       }
     }
   }
@@ -272,24 +271,23 @@ public class Cube {
 
     if (CW) {
       flipRows(3);
-
       for (int i = 0; i < 3; i++) {
-        int temp = cube[2][i][0];
-        cube[2][i][0] = cube[4][0][i];
-        cube[4][0][i] = cube[1][i][2];
-        cube[1][i][2] = cube[3][2][i];
-        cube[3][2][i] = temp;
+        int temp = cube[1][2][i];
+        cube[1][2][i] = cube[5][2][i];
+        cube[5][2][i] = cube[2][2][i];
+        cube[2][2][i] = cube[0][2][i];
+        cube[0][2][i] = temp;
       }
     } else {
       flipCols(3);
 
       for (int i = 0; i < 3; i++) {
 
-        int temp = cube[2][i][0];
-        cube[2][i][0] = cube[3][2][i];
-        cube[3][2][i] = cube[1][i][2];
-        cube[1][i][2] = cube[4][0][i];
-        cube[4][0][i] = temp;
+        int temp = cube[1][2][i];
+        cube[1][2][i] = cube[0][2][i];
+        cube[0][2][i] = cube[2][2][i];
+        cube[2][2][i] = cube[5][2][i];
+        cube[5][2][i] = temp;
       }
     }
   }
