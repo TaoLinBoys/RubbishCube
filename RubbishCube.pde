@@ -3,6 +3,7 @@ import java.util.*;
 
 float rotx = 0;
 float roty = 0;
+int closestFace;
 boolean circleOver;
 float frontZ, rightZ, leftZ, backZ, downZ, topZ;
 Cube Rubbish = new Cube();
@@ -13,6 +14,8 @@ void setup(){
 }
 
 void draw(){
+  
+  updateClosest();
   
   lights();
   background(255,235,215);
@@ -94,6 +97,51 @@ void draw(){
   
 }
 
+void updateClosest(){
+  float biggest = frontZ;
+  closestFace = 0;
+  if(rightZ > biggest){
+    biggest = rightZ;
+    closestFace = 1;
+  }
+  if(leftZ > biggest){
+    biggest = leftZ;
+    closestFace = 2;
+  }
+  if(backZ > biggest){
+    biggest = backZ;
+    closestFace = 5;
+  }
+  if(topZ > biggest){
+    biggest = topZ;
+    closestFace = 4;
+  }
+  if(downZ > biggest){
+    biggest = downZ;
+    closestFace = 3;
+  }
+}
+
+void rotateClosest(boolean CW){
+  if(closestFace == 0){
+    Rubbish.rotateF(CW);
+  }
+  if(closestFace == 1){
+    Rubbish.rotateR(CW);
+  }
+  if(closestFace == 2){
+    Rubbish.rotateL(CW);
+  }
+  if(closestFace == 3){
+    Rubbish.rotateD(CW);
+  }
+  if(closestFace == 4){
+    Rubbish.rotateT(CW);
+  }
+  if(closestFace == 5){
+    Rubbish.rotateB(CW);
+  }
+}
 
 boolean overRect(int x, int y, int width, int height)  {
   if (mouseX >= x && mouseX <= x+width && 

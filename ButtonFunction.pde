@@ -1,10 +1,12 @@
 void mousePressed(){
   if(overRect(width/2-70,height-80,60,60)){
-    Rubbish.rotateL(false);
+    rotateClosest(true);
   }
   if(overRect(width/2+10,height-80,60,60)){
-    Rubbish.rotateL(true);
+    rotateClosest(false);
   }
+  
+  
   
   //front turns
   if(overRect(50,50,50,50)){
