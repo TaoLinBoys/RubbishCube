@@ -5,7 +5,14 @@ float rotx = 0;
 float roty = 0;
 int closestFace;
 boolean circleOver;
-float frontZ, rightZ, leftZ, backZ, downZ, topZ;
+float frontX, frontY, frontZ, 
+      rightX, rightY, rightZ, 
+      leftX, leftY, leftZ, 
+      backX, backY, backZ, 
+      downX, downY, downZ, 
+      topX, topY, topZ;
+
+
 Cube Rubbish = new Cube();
 
 void setup(){
@@ -96,6 +103,15 @@ void draw(){
   
   
 }
+
+float distTo(float x, float y, float z){
+  double sqrX = x*x;
+  double sqrY = y*y;
+  double sqrZ = z*z;
+  return (float)Math.sqrt( (100-sqrX) + (100-sqrY) + (100000-sqrZ) );
+}
+
+
 
 void updateClosest(){
   float biggest = frontZ;

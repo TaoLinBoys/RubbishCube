@@ -1,5 +1,9 @@
 void front(){
-  Scanner frontRed = new Scanner("front.txt");
+  if(closestFace == 0){
+    stroke(255,192,203);
+  }else{
+    stroke(0);
+  }
   
   
   translate(0,0,150);
@@ -23,6 +27,8 @@ void front(){
   translate(100,0,0);//middlecenter
   fillIn(Rubbish.cube[0][1][1]);
   box(100,100,1);
+  frontX = modelX(100,100,1);
+  frontY = modelY(100,100,1);
   frontZ = modelZ(100,100,1);
   
   translate(100,0,0);//middleright
@@ -43,5 +49,4 @@ void front(){
   
   translate(-100,-100,0); //reset
   
-  frontRed.close();
 }

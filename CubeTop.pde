@@ -1,4 +1,10 @@
 void top(){
+  if(closestFace == 4){
+    stroke(255,192,203);
+  }else{
+    stroke(0);
+  }
+  
   translate(0,-300,0);
   
   translate(-100,0,-100);//topleft
@@ -20,6 +26,8 @@ void top(){
   translate(100,0,0);//middlecenter
   fillIn(Rubbish.cube[4][1][1]);
   box(100,1,100);
+  topX = modelX(100,1,100);
+  topY = modelY(100,1,100);
   topZ = modelZ(100,1,100);
   
   translate(100,0,0);//middleright
@@ -39,4 +47,5 @@ void top(){
   box(100,1,100);
   
   translate(-100,150,-100);//reset
+  stroke(0);
 }

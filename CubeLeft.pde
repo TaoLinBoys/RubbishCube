@@ -1,4 +1,10 @@
 void left(){
+  if(closestFace == 2){
+    stroke(255,192,203);
+  }else{
+    stroke(0);
+  }
+  
   translate(-300,0,0);
   //THIS STUFF IS DIFFERENT FROM THE OTHER FACES I SCREWED UP
   translate(0,-100,100);//topleft
@@ -20,6 +26,8 @@ void left(){
   translate(0,0,-100);//middlecenter
   fillIn(Rubbish.cube[2][1][1]);
   box(1,100,100);
+  leftX = modelX(1,100,100);
+  leftY = modelY(1,100,100);
   leftZ = modelZ(1,100,100);
   
   translate(0,0,-100);//middleright

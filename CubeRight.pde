@@ -1,4 +1,10 @@
 void right(){
+  
+  if(closestFace == 1){
+    stroke(255,192,203);
+  }else{
+    stroke(0);
+  }
   translate(150,0,150);
   
   translate(0,-100,100);//topleft
@@ -20,6 +26,8 @@ void right(){
   translate(0,0,-100);//middlecenter
   fillIn(Rubbish.cube[1][1][1]);
   box(1,100,100);
+  rightX = modelX(1,100,100);
+  rightY = modelY(1,100,100);
   rightZ = modelZ(1,100,100);
   
   translate(0,0,-100);//middleright

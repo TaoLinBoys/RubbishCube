@@ -1,4 +1,10 @@
 void bottom(){
+  if(closestFace == 3){
+    stroke(255,192,203);
+  }else{
+    stroke(0);
+  }
+  
   translate(150,150,0);
   
   translate(-100,0,100);//topleft
@@ -20,6 +26,8 @@ void bottom(){
   translate(100,0,0);//middlecenter
   fillIn(Rubbish.cube[3][1][1]);
   box(100,1,100);
+  downX = modelX(100,1,100);
+  downY = modelY(100,1,100);
   downZ = modelZ(100,1,100);
   
   translate(100,0,0);//middleright
