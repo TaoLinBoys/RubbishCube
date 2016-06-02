@@ -26,8 +26,6 @@ void back(){
   translate(100,0,0);//middlecenter
   fillIn(Rubbish.cube[5][1][1]);
   box(100,100,1);
-  backX = modelX(100,100,1);
-  backY = modelY(100,100,1);
   backZ = modelZ(100,100,1);
   
   translate(100,0,0);//middleright

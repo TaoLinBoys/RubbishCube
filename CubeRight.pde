@@ -26,8 +26,6 @@ void right(){
   translate(0,0,-100);//middlecenter
   fillIn(Rubbish.cube[1][1][1]);
   box(1,100,100);
-  rightX = modelX(1,100,100);
-  rightY = modelY(1,100,100);
   rightZ = modelZ(1,100,100);
   
   translate(0,0,-100);//middleright

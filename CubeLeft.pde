@@ -26,8 +26,6 @@ void left(){
   translate(0,0,-100);//middlecenter
   fillIn(Rubbish.cube[2][1][1]);
   box(1,100,100);
-  leftX = modelX(1,100,100);
-  leftY = modelY(1,100,100);
   leftZ = modelZ(1,100,100);
   
   translate(0,0,-100);//middleright

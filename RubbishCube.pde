@@ -5,12 +5,7 @@ float rotx = 0;
 float roty = 0;
 int closestFace;
 boolean circleOver;
-float frontX, frontY, frontZ, 
-      rightX, rightY, rightZ, 
-      leftX, leftY, leftZ, 
-      backX, backY, backZ, 
-      downX, downY, downZ, 
-      topX, topY, topZ;
+float frontZ, rightZ, leftZ, backZ, downZ, topZ;
 
 
 Cube Rubbish = new Cube();
