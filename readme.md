@@ -33,3 +33,5 @@ Fixed back rotation.
 Adjusted colors of cube to identify with the original cube.
 Created buttons for each rotation.
 Started thinking about rubiks cube solving algorithm.
+
+5/27/2016- Created buttons so that it rotates the closestface. They are not working.
