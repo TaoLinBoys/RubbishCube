@@ -14,6 +14,7 @@ float frontX, frontY, frontZ,
 
 
 Cube Rubbish = new Cube();
+String ans = "";
 
 void setup(){
   size(800,750,P3D);
@@ -79,6 +80,10 @@ void draw(){
   //SCRAMBLE
   fill(175);
   rect(300,50,50,50);
+  
+  //SOLUTION
+  rect(400,50,50,50);
+  text(ans,400,150);
   
   fill(0);
   text("CCW",40,30);

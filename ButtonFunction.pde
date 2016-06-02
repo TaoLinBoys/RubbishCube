@@ -59,4 +59,8 @@ void mousePressed(){
   if(overRect(300,50,50,50)){
     Rubbish.scrambleCube();
   }
+  
+  if(overRect(400,50,50,50)){
+    ans = Rubbish.showSolution();
+  }
 }
