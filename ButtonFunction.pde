@@ -6,8 +6,11 @@ void mousePressed(){
     rotateClosest(false);
   }
   
+  if(overRect(50,50,50,50)){
+    reset();
+  }
   
-  
+  /*
   //front turns
   if(overRect(50,50,50,50)){
     Rubbish.rotateF(false);
@@ -63,4 +66,5 @@ void mousePressed(){
   if(overRect(400,50,50,50)){
     ans = Rubbish.showSolution();
   }
+  */
 }

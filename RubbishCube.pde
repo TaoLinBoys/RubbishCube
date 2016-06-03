@@ -72,6 +72,8 @@ void draw(){
   rect(50,550,50,50);
   rect(100,550,50,50);
   */
+  
+  
   //SCRAMBLE
   fill(175);
   rect(300,50,50,50);
@@ -79,6 +81,9 @@ void draw(){
   //SOLUTION
   rect(400,50,50,50);
   text(ans,400,150);
+  
+  rect(50,50,50,50);
+  text("RESET",50,40);
   
   
   fill(0);
@@ -164,6 +169,11 @@ void rotateClosest(boolean CW){
     Rubbish.rotateB(CW);
   }
 }
+
+void reset(){
+  Rubbish = new Cube();
+}
+
 
 boolean overRect(int x, int y, int width, int height)  {
   if (mouseX >= x && mouseX <= x+width && 
