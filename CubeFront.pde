@@ -27,7 +27,7 @@ void front(){
   translate(100,0,0);//middlecenter
   fillIn(Rubbish.cube[0][1][1]);
   box(100,100,1);
-  frontZ = modelZ(100,100,1);
+  frontZ = modelZ(100,0,0);
   
   translate(100,0,0);//middleright
   fillIn(Rubbish.cube[0][1][2]);
