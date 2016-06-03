@@ -39,14 +39,14 @@ void draw(){
   
   pushMatrix();
   strokeWeight(5);
-  fill(255,213,253,255);
+  fill(#FFC0CB);
   rect(width/2-70,height-80,60,60);
-  fill(255,213,150,255);
+  fill(#FFC0CB);
   rect(width/2+10,height-80,60,60);
   popMatrix();
   
   pushMatrix();
-  
+  /*
   fill(135,206,250);
   //front buttons
   rect(50,50,50,50);
@@ -71,7 +71,7 @@ void draw(){
   //down
   rect(50,550,50,50);
   rect(100,550,50,50);
-  
+  */
   //SCRAMBLE
   fill(175);
   rect(300,50,50,50);
@@ -80,7 +80,9 @@ void draw(){
   rect(400,50,50,50);
   text(ans,400,150);
   
+  
   fill(0);
+  /*
   text("CCW",40,30);
   text("CW",90,30);
   
@@ -90,15 +92,19 @@ void draw(){
   text("Top",50,340);
   text("Back",50,440);
   text("Down",50,540);
-  
+  */
   text("scramble",300,30);
+  text("CW",width/2-50,height-50);
+  text("CCW",width/2+20,height-50);
   
+  /*
   text("front z value  "+frontZ, 600,100);
   text("right z value  "+rightZ, 600,130);
   text("left z value  "+leftZ, 600,160);
   text("back z value  "+backZ, 600,190);
   text("top z value  "+topZ, 600,210);
   text("down z value  "+downZ, 600,240);
+  */
   popMatrix();
   
   
