@@ -62,16 +62,10 @@ public class Cube {
     }
   }
   
-  public String showSolution() {
+  public String showSolution(){
     String ans = "";
-    String temp = solution.pop();
     while (!solution.isEmpty()){
-      if (temp != null){
-         if (!(solution.peek() == inv(temp))){
-           ans += temp;
-         }
-      }
-      
+      ans += solution.pop();  
     }
     return ans;
   }
