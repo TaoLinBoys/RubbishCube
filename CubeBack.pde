@@ -27,6 +27,10 @@ void back(){
   fillIn(Rubbish.cube[5][1][1]);
   box(100,100,1);
   backZ = modelZ(100,0,0);
+  textSize(100);
+  fill(0);
+  text("B",0,10,-50);
+  textSize(12);
   
   translate(100,0,0);//middleright
   fillIn(Rubbish.cube[5][1][0]);

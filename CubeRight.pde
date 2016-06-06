@@ -27,6 +27,10 @@ void right(){
   fillIn(Rubbish.cube[1][1][1]);
   box(1,100,100);
   rightZ = modelZ(0,0,-100);
+  textSize(100);
+  fill(0);
+  text("R",0,10,50);
+  textSize(12);
   
   translate(0,0,-100);//middleright
   fillIn(Rubbish.cube[1][1][2]);
