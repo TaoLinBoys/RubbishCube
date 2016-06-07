@@ -45,9 +45,9 @@ Working on display of solution.
 
 6/5/2016- Created a button to show the solution in a string of text
 
-6/6/2016- Created labels on each face of the cube
-Fixed a rotate bug on the "DOWN" face
-Labeled buttons and changed button colors
+6/6/2016- Created labels on each face of the cube.
+Fixed a rotate bug on the "DOWN" face.
+Labeled buttons and changed button colors.
 Changed solving function to only display next move of solution instead of whole string.
 Solve function will now track your moves and dynamically adjust the solution accordingly.
 
