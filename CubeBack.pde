@@ -29,8 +29,10 @@ void back(){
   backZ = modelZ(100,0,0);
   textSize(100);
   fill(0);
-  text("B",0,10,-50);
+  rotateY(PI);
+  text("B",-30,40,1);
   textSize(12);
+  rotateY(PI);
   
   translate(100,0,0);//middleright
   fillIn(Rubbish.cube[5][1][0]);

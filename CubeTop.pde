@@ -29,8 +29,10 @@ void top(){
   topZ = modelZ(100,0,0);
   textSize(100);
   fill(0);
-  text("T",0,10,50);
+  rotateX(PI/2);
+  text("T",-30,40,1);
   textSize(12);
+  rotateX(-PI/2);
   
   translate(100,0,0);//middleright
   fillIn(Rubbish.cube[4][1][2]);

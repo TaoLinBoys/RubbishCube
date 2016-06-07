@@ -30,7 +30,7 @@ void front(){
   frontZ = modelZ(100,0,0);
   textSize(100);
   fill(0);
-  text("F",0,0,0,0);
+  text("F",-30,40,1);
   textSize(12);
   
   

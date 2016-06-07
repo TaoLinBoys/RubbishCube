@@ -29,8 +29,10 @@ void left(){
   leftZ = modelZ(0,0,-100);
   textSize(100);
   fill(0);
-  text("L",0,10,50);
+  rotateY(-PI/2);
+  text("L",-30,40,1);
   textSize(12);
+  rotateY(PI/2);
   
   translate(0,0,-100);//middleright
   fillIn(Rubbish.cube[2][1][0]);
