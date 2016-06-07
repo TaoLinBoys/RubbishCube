@@ -64,7 +64,7 @@ void mousePressed(){
   }
   
   if(overRect(400,50,50,50)){
-    ans = Rubbish.showSolution();
+    ans = Rubbish.showNextStepOfSolution();
   }
   
 }

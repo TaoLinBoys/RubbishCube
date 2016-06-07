@@ -61,24 +61,24 @@ public class Cube {
       }
     }
   }
-  
-  public String showSolution(){
-    String ans = "";
-    while (!solution.isEmpty()){
-      ans += solution.pop();  
-    }
-    return ans;
-  }
-  
-  private String inv(String s){
-    char x = s.charAt(1);
-    if (x == '\''){
-      return s.substring(0,1) + ' ';
+
+  public String showNextStepOfSolution() {
+    if (!solution.isEmpty()){
+      return solution.peek();
     }else{
-      return s.substring(0,1) + '\'';
+      return "Solved";
     }
   }
-    
+
+  private String inv(String s) {
+    char x = s.charAt(1);
+    if (x == '\'') {
+      return s.substring(0, 1) + ' ';
+    } else {
+      return s.substring(0, 1) + '\'';
+    }
+  }
+
 
 
 
@@ -125,7 +125,11 @@ public class Cube {
         cube[2][inv(i)][2] = cube[3][0][inv(i)];
         cube[3][0][inv(i)] = temp;
       }
-      solution.push("F\'");
+      if (solution.isEmpty() || !"F ".equals(solution.peek())) {  
+        solution.push("F\'");
+      } else {
+        solution.pop();
+      }
     } else {
       flipCols(0);
 
@@ -136,7 +140,11 @@ public class Cube {
         cube[2][inv(i)][2] = cube[4][2][i];
         cube[4][2][i] = temp;
       }
-      solution.push("F ");
+      if (solution.isEmpty() || !"F'".equals(solution.peek())) {  
+        solution.push("F ");
+      } else {
+        solution.pop();
+      }
     }
   }
 
@@ -153,7 +161,11 @@ public class Cube {
         cube[1][inv(i)][2] = cube[3][2][i];
         cube[3][2][i] = temp;
       }
-      solution.push("B\'");
+      if (solution.isEmpty() ||!"B ".equals(solution.peek())) {  
+        solution.push("B\'");
+      } else {
+        solution.pop();
+      }
     } else {
       flipCols(5);
 
@@ -164,7 +176,11 @@ public class Cube {
         cube[1][inv(i)][2] = cube[4][0][inv(i)];
         cube[4][0][inv(i)] = temp;
       }
-      solution.push("B ");
+      if (solution.isEmpty() ||!"B'".equals(solution.peek())) {  
+        solution.push("B ");
+      } else {
+        solution.pop();
+      }
     }
   }
 
@@ -182,7 +198,11 @@ public class Cube {
         cube[5][inv(i)][2] = cube[3][i][0];
         cube[3][i][0] = temp;
       }
-      solution.push("L\'");
+      if (solution.isEmpty() ||!"L ".equals(solution.peek())) {  
+        solution.push("L\'");
+      } else {
+        solution.pop();
+      }
     } else {
       flipCols(2);
 
@@ -194,7 +214,11 @@ public class Cube {
         cube[5][inv(i)][2] = cube[4][i][0];
         cube[4][i][0] = temp;
       }
-      solution.push("L ");
+      if (solution.isEmpty() ||!"L'".equals(solution.peek())) {  
+        solution.push("L ");
+      } else {
+        solution.pop();
+      }
     }
   }
 
@@ -212,8 +236,13 @@ public class Cube {
         cube[0][inv(i)][2] = cube[3][inv(i)][2];
         cube[3][inv(i)][2] = temp;
       }
-      solution.push("R\'");
+      if (solution.isEmpty() ||!"R ".equals(solution.peek())) {  
+        solution.push("R\'");
+      } else {
+        solution.pop();
+      }
     } else {
+
       flipCols(1);
 
       for (int i = 0; i < 3; i++) {
@@ -224,7 +253,11 @@ public class Cube {
         cube[0][inv(i)][2] = cube[4][inv(i)][2];
         cube[4][inv(i)][2] = temp;
       }
-      solution.push("R ");
+      if (solution.isEmpty() ||!"R'".equals(solution.peek())) {  
+        solution.push("R ");
+      } else {
+        solution.pop();
+      }
     }
   }
   public void rotateT(boolean CW) {
@@ -240,7 +273,11 @@ public class Cube {
         cube[2][0][i] = cube[0][0][i];
         cube[0][0][i] = temp;
       }
-      solution.push("T\'");
+      if (solution.isEmpty() ||!"T ".equals(solution.peek())) {  
+        solution.push("T\'");
+      } else {  
+        solution.pop();
+      }
     } else {
       flipCols(4);
 
@@ -252,7 +289,11 @@ public class Cube {
         cube[2][0][i] = cube[5][0][i];
         cube[5][0][i] = temp;
       }
-      solution.push("T ");
+      if (solution.isEmpty() ||!"T'".equals(solution.peek())) {  
+        solution.push("T ");
+      } else {
+        solution.pop();
+      }
     }
   }
   public void rotateD(boolean CW) {
@@ -267,7 +308,11 @@ public class Cube {
         cube[2][2][i] = cube[0][2][i];
         cube[0][2][i] = temp;
       }
-      solution.push("D\'");
+      if (solution.isEmpty() ||!"D ".equals(solution.peek())) {  
+        solution.push("D\'");
+      } else {
+        solution.pop();
+      }
     } else {
       flipCols(3);
 
@@ -279,7 +324,11 @@ public class Cube {
         cube[2][2][i] = cube[5][2][i];
         cube[5][2][i] = temp;
       }
-      solution.push("D ");
+      if (solution.isEmpty() ||!"D'".equals(solution.peek())) {  
+        solution.push("D ");
+      } else {
+        solution.pop();
+      }
     }
   }
 
