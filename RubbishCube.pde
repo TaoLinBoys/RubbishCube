@@ -75,25 +75,27 @@ void draw(){
   
   
   //SCRAMBLE
-  fill(175);
+  fill(0,255,0);
   rect(300,50,50,50);
   fill(0);
   text("SCRAMBLE",295,40);
   
   //SOLUTION
-  fill(175);
+  fill(0,0,255);
   rect(400,50,50,50);
-  fill(200,50,50);
-  text(ans,600,75);
   fill(0);
   text("HACKS",405,40);
   
+ 
   //RESET
-  fill(175);
+  fill(255,0,0);
   rect(50,50,50,50);
   fill(0);
   text("RESET",57,40);
   
+  
+  fill(200,50,50);
+  text(ans,600,75);  
   
   fill(0);
   /*

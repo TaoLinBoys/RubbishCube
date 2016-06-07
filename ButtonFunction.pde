@@ -8,6 +8,7 @@ void mousePressed(){
   
   if(overRect(50,50,50,50)){
     reset();
+    ans = "RESET";
   }
   
   /*
@@ -61,6 +62,7 @@ void mousePressed(){
   */
   if(overRect(300,50,50,50)){
     Rubbish.scrambleCube();
+    ans = "SCRAMBLED";
   }
   
   if(overRect(400,50,50,50)){

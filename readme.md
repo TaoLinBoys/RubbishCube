@@ -35,12 +35,22 @@ Adjusted colors of cube to identify with the original cube.
 Created buttons for each rotation.
 Started thinking about rubiks cube solving algorithm.
 
-5/27/2016- Created buttons so that it rotates the closestface. Started tests to see how to rotate closest face. Created a scramble function and button. Working on display of solution.
+5/27/2016- Created buttons so that it rotates the closestface. Started tests to see how to rotate closest face.
+Created a scramble function and button.
+Working on display of solution.
 
 5/31/2016- Created an effect that highlights the closest face/the face the two buttons at the bottom of the screen will rotate.
 
 6/3/2016- Deleted the buttons that manually rotated each face. Created a reset button. Made the the rotation by closest face work better by changing some numbers.
 
-6/5/2016- Created a button to show the solution
+6/5/2016- Created a button to show the solution in a string of text
 
-6/7/2016- Created labels on each face of the cube
+6/6/2016- Created labels on each face of the cube
+Fixed a rotate bug on the "DOWN" face
+Labeled buttons and changed button colors
+Changed solving function to only display next move of solution instead of whole string.
+Solve function will now track your moves and dynamically adjust the solution accordingly.
+
+
+
+
