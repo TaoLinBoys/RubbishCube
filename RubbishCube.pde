@@ -77,13 +77,22 @@ void draw(){
   //SCRAMBLE
   fill(175);
   rect(300,50,50,50);
+  fill(0);
+  text("SCRAMBLE",295,40);
   
   //SOLUTION
+  fill(175);
   rect(400,50,50,50);
-  text(ans,400,150);
+  fill(200,50,50);
+  text(ans,600,75);
+  fill(0);
+  text("HACKS",405,40);
   
+  //RESET
+  fill(175);
   rect(50,50,50,50);
-  text("RESET",50,40);
+  fill(0);
+  text("RESET",57,40);
   
   
   fill(0);
@@ -98,9 +107,8 @@ void draw(){
   text("Back",50,440);
   text("Down",50,540);
   */
-  text("scramble",300,30);
-  text("CW",width/2-50,height-50);
-  text("CCW",width/2+20,height-50);
+  text("CCW",width/2-50,height-50);
+  text("CW",width/2+20,height-50);
   
   /*
   text("front z value  "+frontZ, 600,100);

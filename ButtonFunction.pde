@@ -1,9 +1,9 @@
 void mousePressed(){
   if(overRect(width/2-70,height-80,60,60)){
-    rotateClosest(true);
+    rotateClosest(false);
   }
   if(overRect(width/2+10,height-80,60,60)){
-    rotateClosest(false);
+    rotateClosest(true);
   }
   
   if(overRect(50,50,50,50)){

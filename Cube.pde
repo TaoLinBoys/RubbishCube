@@ -282,7 +282,6 @@ public class Cube {
       flipCols(4);
 
       for (int i = 0; i < 3; i++) {
-
         int temp = cube[1][0][i];
         cube[1][0][i] = cube[0][0][i];
         cube[0][0][i] = cube[2][0][i];
@@ -303,10 +302,10 @@ public class Cube {
       flipRows(3);
       for (int i = 0; i < 3; i++) {
         int temp = cube[1][2][i];
-        cube[1][2][i] = cube[5][2][i];
-        cube[5][2][i] = cube[2][2][i];
-        cube[2][2][i] = cube[0][2][i];
-        cube[0][2][i] = temp;
+        cube[1][2][i] = cube[0][2][i];
+        cube[0][2][i] = cube[2][2][i];
+        cube[2][2][i] = cube[5][2][i];
+        cube[5][2][i] = temp;
       }
       if (solution.isEmpty() ||!"D ".equals(solution.peek())) {  
         solution.push("D\'");
@@ -317,12 +316,11 @@ public class Cube {
       flipCols(3);
 
       for (int i = 0; i < 3; i++) {
-
         int temp = cube[1][2][i];
-        cube[1][2][i] = cube[0][2][i];
-        cube[0][2][i] = cube[2][2][i];
-        cube[2][2][i] = cube[5][2][i];
-        cube[5][2][i] = temp;
+        cube[1][2][i] = cube[5][2][i];
+        cube[5][2][i] = cube[2][2][i];
+        cube[2][2][i] = cube[0][2][i];
+        cube[0][2][i] = temp;
       }
       if (solution.isEmpty() ||!"D'".equals(solution.peek())) {  
         solution.push("D ");
