@@ -28,10 +28,19 @@ Began work on saving cube progress in files.
 
 5/25/2016- Fixed merge errors.
 Fixed back rotation.
+3D cube now follows the color designation from the Cube class.
 
 5/26/2016- Fixed all rotations.
 Adjusted colors of cube to identify with the original cube.
 Created buttons for each rotation.
 Started thinking about rubiks cube solving algorithm.
 
-5/27/2016- Created buttons so that it rotates the closestface. They are not working.
+5/27/2016- Created buttons so that it rotates the closestface. Started tests to see how to rotate closest face. Created a scramble function and button. Working on display of solution.
+
+5/31/2016- Created an effect that highlights the closest face/the face the two buttons at the bottom of the screen will rotate.
+
+6/3/2016- Deleted the buttons that manually rotated each face. Created a reset button. Made the the rotation by closest face work better by changing some numbers.
+
+6/5/2016- Created a button to show the solution
+
+6/7/2016- Created labels on each face of the cube
